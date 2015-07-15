@@ -7,7 +7,14 @@
 
 # RStudio files
 .Rproj.user/
+.RData
 
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
+
+# cache
+*_cache
+
+# data 
+*.csv

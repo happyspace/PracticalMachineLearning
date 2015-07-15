@@ -1,28 +1,41 @@
-# PracticalMachineLearning
+# Practical Machine Learning
 Eddie Warner  
-Sunday, July 12, 2015  
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Synopsis
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Human activity recognition - HAR - examines data gathered through monitors like *Jawbone Up*, *Nike FuelBand*, *Fitbit*, *Apple Watch*, *Basis Peak* etc. to quantify activity to address any number of applications.  Applications include, energy expenditure for weight-loss programs, monitoring of the elderly and monitoring fitness activity of a person or population to reach fitness goals. A novel question posed by the data set examined by this anlysis **Weight Lifting Exercises Dataset** is if training or qualitative measure like training can measured through the data. For a more complete description for the questions that initialed the study 
+
+
+
+## Data Processing
 
 
 ```r
-summary(cars)
+file.name.train <- "pml-training.csv"
+file.url.train <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+
+file.name.test <- "pml-testing.csv"
+file.url.test <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+
+if(!file.exists(file.name.train)) {
+    download.file(url = file.url.train, destfile = file.name.train)
+}
+
+if(!file.exists(file.name.test)) {
+    download.file(url = file.url.test, destfile = file.name.test)
+}
+
+train_data <- as.data.table(read.csv(file.name.train, stringsAsFactors=FALSE, strip.white=TRUE))
+
+test_data <- as.data.table(read.csv(file.name.test, stringsAsFactors=FALSE, strip.white=TRUE))
 ```
 
-```
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-```
+## Data Exploration
 
-You can also embed plots, for example:
+## Analysis
 
-![](PracticalMachineLearning_files/figure-html/unnamed-chunk-2-1.png) 
+## References
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Appendix
+
+
